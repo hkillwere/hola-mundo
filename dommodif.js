@@ -31,8 +31,13 @@ localStorage.clear();
 // REalizo una lista de vehículos con una función para agregar vehiculos mediante javascript al DOM
 
     function agregarVehiculoAHTML (vehiculo) {
+        
+        if (document.getElementById("list")){
+            document.getElementById("list").remove();
+        }
 
         let ul = document.createElement("ul");
+        ul.setAttribute("id","list");
     
         let li1 = document.createElement("li");
         li1.innerText = `El vehiculo que usted seleccionó ${vehiculo.tipo}`;
